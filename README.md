@@ -53,6 +53,29 @@ module.exports = (eleventyConfig) => {
 ```
 
 
+## Readable Date
+Nunjucks filter that Creates Readable Dates
+
+### Add to config. Usually `.eleventy.js`
+```js
+const { readableDate } = require("dwkns-11ty-plugins");
+
+module.exports = (eleventyConfig) => {
+  ...
+  eleventyConfig.addPlugin(readableDate);
+  ...
+}
+```
+
+### Usage
+```
+---
+date: 2021-10-18
+---
+
+{{date | readableDate }}
+>> 18 Oct 2021
+```
 
 
 
