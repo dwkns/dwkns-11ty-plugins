@@ -14,11 +14,11 @@ Nunjucks filter that Pretty Prints out variables to HTML `<pre></pre>`  and to t
 
 ### Add to config. Usually `.eleventy.js`
 ```js
-const { console } = require("dwkns-11ty-plugins");
+const { logToConsole } = require("dwkns-11ty-plugins");
 
 module.exports = (eleventyConfig) => {
   ...
-  eleventyConfig.addPlugin(console);
+  eleventyConfig.addPlugin(logToConsole);
   ...
 }
 ```
