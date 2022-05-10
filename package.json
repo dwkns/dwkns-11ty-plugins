@@ -1,6 +1,6 @@
 {
   "name": "dwkns-eleventy-plugins",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A group of reusable plugins",
   "main": "index.js",
   "repository": {
@@ -17,6 +17,7 @@
   "author": "dwkns",
   "license": "MIT",
   "dependencies": {
+    "lodash": "^4.17.21"
   },
   "bugs": {
     "url": "https://github.com/dwkns/dwkns-eleventy-plugins/issues"
