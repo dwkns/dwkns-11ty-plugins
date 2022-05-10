@@ -2,7 +2,6 @@
 Set of plugins for 11ty. 
 Probably not a lot of use for most people. 
 
-
 ### Usage
 
 ```js
