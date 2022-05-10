@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dwkns/dwkns-eleventy-plugins.git"
+    "url": "git+https://github.com/dwkns/dwkns-eleventy-plugins.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,6 +16,11 @@
   ],
   "author": "dwkns",
   "license": "MIT",
-  "dependencies": {"highlight.js": "^11.5.1"}
+  "dependencies": {
+    "highlight.js": "^11.5.1"
+  },
+  "bugs": {
+    "url": "https://github.com/dwkns/dwkns-eleventy-plugins/issues"
+  },
+  "homepage": "https://github.com/dwkns/dwkns-eleventy-plugins#readme"
 }
-
