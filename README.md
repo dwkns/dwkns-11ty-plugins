@@ -5,7 +5,7 @@ Probably not a lot of use for most people.
 ## Installing
 
 ```bash
-yarn add dwkns-11ty-plugins
+yarn add dwkns-eleventy-plugins
 ```
 
 
