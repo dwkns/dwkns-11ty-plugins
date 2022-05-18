@@ -78,6 +78,35 @@ date: 2021-10-18
 ```
 
 
+## Inline SVG
+Nunjucks async shortcode that inlines SVG's
+
+Automatically removes height and width attributes.
+
+### Add to config. Usually `.eleventy.js`
+```js
+const { inlineSVG } = require("dwkns-11ty-plugins");
+
+module.exports = (eleventyConfig) => {
+  ...
+  eleventyConfig.addPlugin(inlineSVG);
+  ...
+}
+```
+
+### Usage
+```
+{% inlineSVG [filename], {options} %}
+
+{% inlineSVG './src/images/logo.svg', { class: "w-auto h-16", alt: "Under2 logo", id: "under2Logo" } %}
+```
+
+### Options
+| Options | Use                       | Default |
+| ------- | ------------------------- | ------- |
+| class   | Add `class=""` to the SVG |         |
+| alt     | Add an Title to SVG       |         |
+| id      | Add an `id=""` to SVG     |         |
 
 
 
