@@ -3,8 +3,7 @@ const util = require('util');
 // utility function to log value to HTML & the Console
 let logToConsole = (eleventyConfig) => {
   eleventyConfig.addFilter("console", (value) => {
-
-    let str = util.inspect(value);
+    let str = util.inspect(value, showHidden = false, depth = 8, colorize = false);
     let css = `
     <style>
     pre {
@@ -36,3 +35,4 @@ let logToConsole = (eleventyConfig) => {
 module.exports = {
   logToConsole,
 }
+

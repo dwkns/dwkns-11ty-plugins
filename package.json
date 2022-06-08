@@ -1,6 +1,6 @@
 {
   "name": "dwkns-eleventy-plugins",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A group of reusable plugins",
   "main": "index.js",
   "repository": {
@@ -24,6 +24,11 @@
   },
   "bugs": {
     "url": "https://github.com/dwkns/dwkns-eleventy-plugins/issues"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2020
+    }
   },
   "homepage": "https://github.com/dwkns/dwkns-eleventy-plugins#readme"
 }

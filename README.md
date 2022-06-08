@@ -10,7 +10,7 @@ yarn add dwkns-eleventy-plugins
 
 
 ## Console
-Nunjucks filter that Pretty Prints out variables to HTML `<pre></pre>`  and to the console.
+Nunjucks filter that Pretty Prints out variables to HTML `<pre></pre>`  and to the console. Up to 8 levels of object are printed.
 
 ### Add to config. Usually `.eleventy.js`
 ```js
