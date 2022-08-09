@@ -9,6 +9,37 @@ yarn add dwkns-eleventy-plugins
 ```
 
 
+## htmlMinifer
+addTransform plugin which minifies HTML including inline CSS & JS
+
+### Add to config. Usually `.eleventy.js`
+```js
+const { htmlMinifer } = require("dwkns-11ty-plugins");
+
+module.exports = (eleventyConfig) => {
+  ...
+    options = { 
+      minify: true // default 
+    }
+    eleventyConfig.addPlugin(htmlMinifer, options);
+  ...
+}
+```
+
+### Usage
+This transforms applies to every HTML page generated. 
+If no options are passed, transform will be applied.
+
+Use this to pass in the site data.
+
+```js
+options = { 
+      minify: site[site.currentEnv].minify_inline_HTML_CSS_JS  
+    }
+eleventyConfig.addPlugin(htmlMinifer, options);
+```
+
+
 ## Console
 Nunjucks filter that Pretty Prints out variables to HTML `<pre></pre>`  and to the console. Up to 8 levels of object are printed.
 
@@ -27,7 +58,6 @@ module.exports = (eleventyConfig) => {
 ```
 {{ valueToLog | console | safe }}
 ```
-
 
 ## addAnOrA
 Nunjucks filter that prepends an `A` or `An` depending on the word supplied.
