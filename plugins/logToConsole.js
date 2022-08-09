@@ -2,8 +2,8 @@ const util = require('util');
 
 // utility function to log value to HTML & the Console
 let logToConsole = (eleventyConfig) => {
-  eleventyConfig.addFilter("console", (value) => {
-    let str = util.inspect(value, showHidden = false, depth = 8, colorize = false);
+  eleventyConfig.addFilter("console", (value, depth=4) => {
+    let str = util.inspect(value, showHidden = false, depth, colorize = false);
     let css = `
     <style>
     pre {
