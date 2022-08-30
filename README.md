@@ -55,6 +55,7 @@ module.exports = (eleventyConfig) => {
   	logToHtml: true,
     logToConsole: true,
     colorizeConsole: true,
+    escapeHTML: true,
 	}
   eleventyConfig.addPlugin(logToConsole);
 }

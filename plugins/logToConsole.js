@@ -1,19 +1,21 @@
 const util = require('util');
-
+const escapeHtml = require('escape-html')
 // utility function to log value to HTML & the Console
 let logToConsole = (eleventyConfig, options) => {
   defaults = {
     logToHtml: true,
     logToConsole: true,
-    colorizeConsole: true,
+    colorizeConsole: false,
+    escapeHTML: true,
   }
   options = Object.assign({}, defaults, options);
   
   eleventyConfig.addFilter("console", (value, depth=4) => {
-    let str = util.inspect(value, showHidden = false, depth, colorize = options.colorizeConsole);
+    let consoleStr = util.inspect(value, showHidden = false, depth, colorize = options.colorizeConsole);
+    let htmlStr = util.inspect(value, showHidden = false, depth, colorize = false);
     if (options.logToConsole) {
       console.log('-------------start console output-------------')
-      console.log(str);
+      console.log( `${ options.escapeHTML ? escapeHtml(consoleStr) : consoleStr }`);
       console.log('-------------end-------------');
     } 
     if (options.logToHtml) {
@@ -36,8 +38,14 @@ let logToConsole = (eleventyConfig, options) => {
         word-wrap: break-word;
       }
       </style>`
-      let html = `<div style="margin-top: 20px; "><pre><code> ${unescape(str)} </code></pre> </div>` 
-      return unescape(css + html)
+
+      console.log(`[options.escapeHTML is]:`, options.escapeHTML  );
+      console.log(`[escapeHtml(htmlStr)]:`, escapeHtml(htmlStr) );
+      console.log(`[htmlStr]:`, htmlStr );
+      
+      let html = `<div style="margin-top: 20px; "><pre><code>  ${ options.escapeHTML ? escapeHtml(htmlStr) : htmlStr } </code></pre> </div>` 
+      
+      return css + html
     }
   });
 }
