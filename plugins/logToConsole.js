@@ -38,10 +38,6 @@ let logToConsole = (eleventyConfig, options) => {
         word-wrap: break-word;
       }
       </style>`
-
-      console.log(`[options.escapeHTML is]:`, options.escapeHTML  );
-      console.log(`[escapeHtml(htmlStr)]:`, escapeHtml(htmlStr) );
-      console.log(`[htmlStr]:`, htmlStr );
       
       let html = `<div style="margin-top: 20px; "><pre><code>  ${ options.escapeHTML ? escapeHtml(htmlStr) : htmlStr } </code></pre> </div>` 
       
