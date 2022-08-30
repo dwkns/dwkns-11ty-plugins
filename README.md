@@ -9,38 +9,40 @@ yarn add dwkns-eleventy-plugins
 ```
 
 
-## htmlMinifer
-addTransform plugin which minifies HTML including inline CSS & JS
 
-### Add to config. Usually `.eleventy.js`
+# htmlMinifer
+
+Transform plugin which minifies HTML including inline CSS & JS on all HTML pages. If no options are passed in the following defaults are used. 
+
+#### Usage
+
 ```js
+// .eleventy.js
 const { htmlMinifer } = require("dwkns-11ty-plugins");
 
 module.exports = (eleventyConfig) => {
-  ...
-    options = { 
-      minify: true // default 
-    }
-    eleventyConfig.addPlugin(htmlMinifer, options);
-  ...
+  // default options shown
+  options = {
+  	minify: true,
+    minifyCSS: true,
+    minifyJS: true,
+	}
+  eleventyConfig.addPlugin(htmlMinifer, options);
 }
 ```
 
-### Usage
-This transforms applies to every HTML page generated. 
-If no options are passed, transform will be applied.
-
-Use this to pass in the site data.
+#### To pick up site settings
 
 ```js
 options = { 
-      minify: site[site.currentEnv].minify_inline_HTML_CSS_JS  
-    }
-eleventyConfig.addPlugin(htmlMinifer, options);
+    minify: site[site.currentEnv].minify_html,  
+};
 ```
 
 
-## Console
+
+# Console
+
 Nunjucks filter that Pretty Prints out variables to HTML `<pre></pre>`  and to the console. Up to 8 levels of object are printed.
 
 ### Add to config. Usually `.eleventy.js`
@@ -48,9 +50,13 @@ Nunjucks filter that Pretty Prints out variables to HTML `<pre></pre>`  and to t
 const { logToConsole } = require("dwkns-11ty-plugins");
 
 module.exports = (eleventyConfig) => {
-  ...
+  // default options shown
+  options = {
+  	logToHtml: true,
+    logToConsole: true,
+    colorizeConsole: true,
+	}
   eleventyConfig.addPlugin(logToConsole);
-  ...
 }
 ```
 
@@ -59,16 +65,21 @@ module.exports = (eleventyConfig) => {
 {{ valueToLog | console | safe }}
 ```
 
-## addAnOrA
+
+
+
+
+# prependAnOrA
+
 Nunjucks filter that prepends an `A` or `An` depending on the word supplied.
 
 ### Add to config. Usually `.eleventy.js`
 ```js
-const { addAnOrA } = require("dwkns-11ty-plugins");
+const { prependAnOrA } = require("dwkns-11ty-plugins");
 
 module.exports = (eleventyConfig) => {
   ...
-  eleventyConfig.addPlugin(addAnOrA);
+  eleventyConfig.addPlugin(prependAnOrA);
   ...
 }
 ```
