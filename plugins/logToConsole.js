@@ -39,7 +39,7 @@ let logToConsole = (eleventyConfig, options) => {
       }
       </style>`
       
-      let html = `<div><pre><code>  ${ options.escapeHTML ? escapeHtml(htmlStr) : htmlStr } </code></pre></div>` 
+      let html = `<div style="margin-top:5px;"><pre><code>${ options.escapeHTML ? escapeHtml(htmlStr) : htmlStr }</code></pre></div>` 
       
       return css + html
     }
