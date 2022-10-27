@@ -8,7 +8,7 @@
     "url": "git+https://github.com/dwkns/dwkns-eleventy-plugins.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "publish-npm": "./bin/publish.sh"
   },
   "keywords": [
     "eleventy",
