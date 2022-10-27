@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-echo 'hello'
+# exit when any command fails
+set -e
 
 npm version patch
 echo 'npm version patch — done'
