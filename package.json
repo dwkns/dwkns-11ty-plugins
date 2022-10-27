@@ -1,6 +1,6 @@
 {
   "name": "dwkns-eleventy-plugins",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A group of reusable plugins",
   "main": "index.js",
   "repository": {
