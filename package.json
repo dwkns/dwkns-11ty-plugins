@@ -1,6 +1,6 @@
 {
   "name": "dwkns-eleventy-plugins",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "A group of reusable plugins",
   "main": "index.js",
   "repository": {
@@ -8,7 +8,7 @@
     "url": "git+https://github.com/dwkns/dwkns-eleventy-plugins.git"
   },
   "scripts": {
-    "publish-npm": "./bin/publish.sh"
+    "pub": "npm version patch --force && npm publish"
   },
   "keywords": [
     "eleventy",
