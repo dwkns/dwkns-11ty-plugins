@@ -55,6 +55,8 @@ let logToConsole = (eleventyConfig, options) => {
         max-width: 100%;
         padding: 0.5rem 1rem;
         display: block;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
       }
       .title {
         font-size: 18px;
