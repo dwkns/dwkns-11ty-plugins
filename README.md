@@ -43,7 +43,7 @@ options = {
 
 # Console
 
-Nunjucks filter that Pretty Prints out variables to HTML `<pre></pre>`  and to the console. Up to 8 levels of object are printed.
+Nunjucks shortcode that Pretty Prints out variables to HTML `<pre></pre>`  and to the console. Up to 8 levels of object are printed.
 
 ### Add to config. Usually `.eleventy.js`
 ```js
@@ -53,7 +53,7 @@ module.exports = (eleventyConfig) => {
   // default options shown
   options = {
   	logToHtml: true,
-    logToConsole: true,
+    logToConsole: false,
     colorizeConsole: true,
     escapeHTML: true,
 	}
@@ -63,7 +63,7 @@ module.exports = (eleventyConfig) => {
 
 ### Usage
 ```
-{{ valueToLog | console | safe }}
+{{ console <value>, <title — optional> }}
 ```
 
 
