@@ -104,7 +104,9 @@ const { readableDate } = require("dwkns-11ty-plugins");
 
 module.exports = (eleventyConfig) => {
   ...
-  eleventyConfig.addPlugin(readableDate);
+  eleventyConfig.addPlugin(readableDate, {
+    format: ''dd LLL yyyy' // default
+  });
   ...
 }
 ```
