@@ -1,7 +1,6 @@
 const htmlmin = require("html-minifier");
 
 const htmlMinifer = (eleventyConfig, options) => {
-  
   defaults = {
     minify: true,
     minifyJS: true,
@@ -9,12 +8,12 @@ const htmlMinifer = (eleventyConfig, options) => {
     useShortDoctype: true,
     removeComments: true,
     collapseWhitespace: true,
-  }
-  
+  };
+
   options = Object.assign({}, defaults, options);
-  
+
   eleventyConfig.addTransform("htmlMinifer", (content, outputPath) => {
-    minify = options.minify
+    minify = options.minify;
 
     if (!minify) return content; // minify not set, return content.
 
@@ -28,10 +27,10 @@ const htmlMinifer = (eleventyConfig, options) => {
       });
       return minified;
     }
-
+    return content;
   });
-}
+};
 
 module.exports = {
   htmlMinifer,
-}
+};
